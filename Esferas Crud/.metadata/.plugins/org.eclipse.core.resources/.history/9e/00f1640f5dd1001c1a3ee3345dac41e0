@@ -1,0 +1,6 @@
+package com.softwar.esferas.validate;
+
+public enum CpfValidate {
+
+	FISICA("Física", "CPF", "000.000.000-00", CpfGroup.class)
+}

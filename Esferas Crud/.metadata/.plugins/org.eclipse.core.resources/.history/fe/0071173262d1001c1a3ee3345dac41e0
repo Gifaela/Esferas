@@ -1,0 +1,31 @@
+package com.softwar.esferas.modal;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.br.CPF;
+
+@Entity
+@Table(name = "tb_pessoa")
+public class Pessoa {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@NotBlank(message = "Nome não foi informado")
+	@Size (min = 3)
+	private String nome;
+	
+	@NotBlank(message = "Sobrenome não foi informado")
+	private String sobrenome;
+	
+	@NotBlank(message = "CPF não foi informado")
+	@CPF(message = "Campo inválido")
+	private String cpf;
+}

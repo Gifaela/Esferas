@@ -1,0 +1,9 @@
+package com.softwar.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.softwar.esferas.modal.Emaill;
+
+public interface EmallRepository extends JpaRepository<Emaill, Long>{
+
+}

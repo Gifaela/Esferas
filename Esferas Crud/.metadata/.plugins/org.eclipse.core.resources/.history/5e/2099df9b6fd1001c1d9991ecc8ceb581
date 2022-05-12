@@ -1,0 +1,5 @@
+package com.softwar.Repository;
+
+public interface TelefoneRepository {
+
+}
