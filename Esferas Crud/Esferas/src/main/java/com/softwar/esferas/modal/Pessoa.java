@@ -26,15 +26,16 @@ public class Pessoa {
 	private Long id;
 
 	@NotBlank(message = "Nome não foi informado")
-	@Size(min = 3)
+	@Size(min = 3, max = 15)
 	private String nome;
 
 	@NotBlank(message = "Sobrenome não foi informado")
+	@Size(min = 3, max = 15)
 	private String sobrenome;
 
 	@NotBlank(message = "CPF não foi informado")
 	@CPF(message = "Campo inválido")
-//	@Pattern(regexp = "(^\\d{3}\\x2E\\d{3}\\x2E\\d{3}\\x2D\\d{2}$)")
+	@Pattern(regexp = "(^\\d{3}\\x2E\\d{3}\\x2E\\d{3}\\x2D\\d{2}$)")
 	private String cpf;
 
 	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.REMOVE)
